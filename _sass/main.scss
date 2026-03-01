@@ -164,3 +164,20 @@ tr:nth-child(even) {
         margin: 0px 0px 0px 50px;
     }
 }
+
+
+.image-border {
+  padding: 10px;
+  border: 5px solid #ccc;
+  margin-bottom: 15px; /* Adds space around the image */
+  /* Add other styles as needed, e.g., max-width, float, etc. */
+  max-width: 100%;
+  height: auto;
+  display: block; /* Helps with centering if needed */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-25-percent {
+  max-width: 25%;;
+}
