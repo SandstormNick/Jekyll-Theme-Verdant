@@ -146,12 +146,12 @@ The theme ships with a **light** and a **dark** colour scheme. Colours are defin
 
 ## Deploying to GitHub Pages
 
-1. Update `url` and `baseurl` in `_config.yml` to match your GitHub Pages URL.
-2. Push your repository to GitHub.
-3. In your repository **Settings → Pages**, select the branch you want to deploy.
-4. GitHub Pages will build and publish the site automatically.
+Because this theme uses `jekyll-archives`, which is not on the GitHub Pages safe allowlist, you **must** deploy via a GitHub Actions workflow rather than letting GitHub Pages build the site directly.
 
-> **Note:** `jekyll-archives` is not on the GitHub Pages allowlist. If you need archive pages on GitHub Pages, consider using GitHub Actions to build the site with a custom workflow.
+1. Update `url` and `baseurl` in `_config.yml` to match your GitHub Pages URL.
+2. In your repository **Settings → Pages**, set the source to **GitHub Actions**.
+3. Add a workflow file (e.g. `.github/workflows/deploy.yml`) that builds the site with `bundle exec jekyll build` and then uploads the `_site` directory as a Pages artifact. GitHub provides an [official starter workflow](https://github.com/actions/starter-workflows/blob/main/pages/jekyll.yml) you can use as a base.
+4. Push your changes — the workflow will build and publish the site automatically on every push to your default branch.
 
 ---
 
